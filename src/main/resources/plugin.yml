@@ -1,0 +1,6 @@
+name: Skyblock
+version: ${project.version}
+main: me.joseph.skyblock.Skyblock
+commands:
+  island:
+    aliases: [f]

@@ -1,0 +1,6 @@
+name: Skyblock
+version: 1.0-SNAPSHOT
+main: me.joseph.skyblock.Skyblock
+commands:
+  island:
+    aliases: [f]
