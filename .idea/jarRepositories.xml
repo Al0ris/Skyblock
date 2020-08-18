@@ -51,5 +51,10 @@
       <option name="name" value="sonatype" />
       <option name="url" value="https://oss.sonatype.org/content/groups/public/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="mongo-repo" />
+      <option name="name" value="mongo-repo" />
+      <option name="url" value="https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-legacy/4.0.3" />
+    </remote-repository>
   </component>
 </project>

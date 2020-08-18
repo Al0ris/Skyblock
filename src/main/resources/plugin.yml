@@ -1,6 +1,7 @@
 name: Skyblock
 version: ${project.version}
 main: me.joseph.skyblock.Skyblock
+depend: [WorldEdit]
 commands:
   island:
     aliases: [f]

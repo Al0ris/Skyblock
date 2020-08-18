@@ -1,13 +1,9 @@
 package me.joseph.skyblock.commands;
 
-import com.sk89q.worldedit.MaxChangedBlocksException;
-import com.sk89q.worldedit.world.DataException;
 import me.joseph.skyblock.interfaces.HexionCommand;
 import me.joseph.skyblock.interfaces.HexionSubCommand;
 import me.lucko.helper.Commands;
 import me.lucko.helper.command.Command;
-
-import java.io.IOException;
 
 public class IslandCommands implements HexionCommand {
 
@@ -19,7 +15,8 @@ public class IslandCommands implements HexionCommand {
 	private final String[] helpMessage = new String[]{"Island Commands:", "	Create"};
 
 	public IslandCommands() {
-		this.subCommands = new HexionSubCommand[]{new IslandCreateCommand()};
+		this.subCommands = new HexionSubCommand[]{new IslandCreateCommand(), new IslandClearCommand(), new IslandInviteCommand(), new IslandJoinCommand()
+		, new IslandGetCommand()};
 		this.command = Commands.create()
 			.assertPlayer()
 			.assertPermission(permission)

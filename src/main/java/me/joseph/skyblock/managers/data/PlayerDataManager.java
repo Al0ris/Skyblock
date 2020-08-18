@@ -14,7 +14,7 @@ public class PlayerDataManager {
 	private static final Datastore datastore = MongoManager.getDatastore();
 
 	public static IslandPlayer getPlayer(UUID id) {
-		return datastore.createQuery(IslandPlayer.class).filter("id ==", id).first();
+		return datastore.createQuery(IslandPlayer.class).field("UUID").equalIgnoreCase(id).first();
 	}
 
 	public static void savePlayer(IslandPlayer islandPlayer) {
@@ -26,8 +26,7 @@ public class PlayerDataManager {
 	}
 
 	public static void removePlayer(UUID id) {
-		Query<IslandPlayer> islandPlayerQuery = datastore.createQuery(IslandPlayer.class)
-				.filter("id ==", id);
+		Query<IslandPlayer> islandPlayerQuery = datastore.createQuery(IslandPlayer.class).field("UUID").equalIgnoreCase(id);
 		datastore.delete(islandPlayerQuery);
 	}
 }

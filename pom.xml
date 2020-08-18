@@ -38,20 +38,6 @@
                         <goals>
                             <goal>shade</goal>
                         </goals>
-                        <configuration>
-                            <transformers>
-                                <!-- add Main-Class to manifest file -->
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>me.joseph.skyblock</mainClass>
-                                </transformer>
-                            </transformers>
-                            <artifactSet>
-                                <includes>
-                                    <include>org.apache.commons.collections4:*</include>
-                                    <include>dev.morphia:*:*:*:*</include>
-                                </includes>
-                            </artifactSet>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -86,6 +72,10 @@
             <id>spigotmc-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
+        <repository>
+            <id>mongo-repo</id>
+            <url>https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-legacy/4.0.3</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -99,11 +89,6 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-collections4</artifactId>
             <version>4.4</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongo-java-driver</artifactId>
-            <version>3.12.5</version>
         </dependency>
         <dependency>
             <groupId>dev.morphia.morphia</groupId>
@@ -126,8 +111,13 @@
             <groupId>com.comphenix.protocol</groupId>
             <artifactId>ProtocolLib</artifactId>
             <version>4.5.0</version>
+            <scope>provided</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver-legacy</artifactId>
+            <version>4.0.3</version>
+        </dependency>
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>

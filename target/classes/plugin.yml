@@ -1,6 +1,7 @@
 name: Skyblock
 version: 1.0-SNAPSHOT
 main: me.joseph.skyblock.Skyblock
+depend: [WorldEdit]
 commands:
   island:
     aliases: [f]
